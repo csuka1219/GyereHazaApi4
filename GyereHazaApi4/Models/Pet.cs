@@ -15,10 +15,14 @@ namespace GyereHazaApi4.Models
         public Guid OwnerId { get; set; }
         public Owner Owners { get; set; }
         [Required]
+        public string Name { get; set; }
+        [Required]
         public string TypeOfAnimal { get; set; }
+        public string Color { get; set; }
         public string Breed { get; set; }
         public string Sex { get; set; }
         public string Issues { get; set; }
+        public string Other { get; set; }
         public Boolean is_Missing { get; set; }
     }
 }

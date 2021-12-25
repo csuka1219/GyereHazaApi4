@@ -80,7 +80,7 @@ namespace GyereHazaApi4.Controllers
                     signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256));
                 return Ok(new
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token)
+                    token = new JwtSecurityTokenHandler().WriteToken(token),user.Id
                 });
             }
             return Unauthorized();
