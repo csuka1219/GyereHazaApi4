@@ -84,6 +84,12 @@ namespace GyereHazaApi4.Controllers
             List<Pet> PetList = await _dbcontext.Pets.Where(x => x.OwnerId == OwnerId).ToListAsync();
             return PetList;
         }
-
+        [HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("GetMissingPets")]
+        public async Task<ActionResult<List<Pet>>> GetMissingPets()
+        {
+            List<Pet> MissingPetList = await _dbcontext.Pets.Where(x => x.is_Missing).ToListAsync();
+            return MissingPetList;
+        }
     }
 }
